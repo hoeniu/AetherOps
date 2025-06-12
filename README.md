@@ -2,7 +2,6 @@
 
 <div align="center">
 <img src="images/logo.png" alt="AetherOps Logo" width="150" height="150">
-</div>
 
 <h3>让运维更智能、更高效、更安全</h3>
 <h4>助力企业迈向"零人工干预"的未来！</h4>
@@ -12,6 +11,7 @@
   <img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python">
   <img src="https://img.shields.io/badge/docker-ready-blue.svg" alt="Docker">
   <img src="https://img.shields.io/badge/platform-linux%20%7C%20windows%20%7C%20macos-lightgrey" alt="Platform">
+</div>
 </div>
 
 ---
