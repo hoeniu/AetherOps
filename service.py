@@ -8,7 +8,7 @@ import random
 # 设置页面配置
 st.set_page_config(
     page_title="AetherOps - AI驱动的DevOps平台",
-    page_icon="��",
+    page_icon="🚀",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -33,6 +33,25 @@ st.markdown("""
     .css-1siy2j7 {
         width: 220px !important;
         min-width: 220px !important;
+    }
+    
+    /* Logo样式 */
+    .logo-container {
+        text-align: center;
+        padding: 20px 0;
+        margin-bottom: 10px;
+    }
+    
+    .logo-container img {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .logo-container img:hover {
+        transform: scale(1.05);
     }
     
     /* 标题样式 */
@@ -206,6 +225,78 @@ st.markdown("""
     ::-webkit-scrollbar-thumb:hover {
         background: linear-gradient(180deg, #2563EB, #7C3AED);
     }
+    
+    /* 修复历史和详情标题样式 */
+    .repair-section-title {
+        background: linear-gradient(90deg, #1E40AF, #7C3AED);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 28px;
+        font-weight: 800;
+        padding: 10px 0;
+        margin-bottom: 20px;
+        text-align: left;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .repair-section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #1E40AF, #7C3AED);
+        border-radius: 2px;
+    }
+    
+    .repair-history-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .repair-type-auto {
+        background: linear-gradient(90deg, #dbeafe 60%, #f0fdfa 100%);
+        color: #2563eb;
+        padding: 2px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        margin-right: 8px;
+    }
+    
+    .repair-type-manual {
+        background: linear-gradient(90deg, #fef9c3 60%, #f3e8ff 100%);
+        color: #b45309;
+        padding: 2px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        margin-right: 8px;
+    }
+    
+    .stButton button {
+        width: 100%;
+        text-align: left;
+        background: #fff;
+        border: 1.5px solid #e0e7ef;
+        border-radius: 10px;
+        padding: 12px 16px;
+        margin-bottom: 8px;
+        transition: all 0.3s ease;
+    }
+    
+    .stButton button:hover {
+        border-color: #3B82F6;
+        box-shadow: 0 4px 12px rgba(59,130,246,0.1);
+        transform: translateY(-1px);
+    }
+    
+    .stButton button.selected {
+        border-color: #3B82F6;
+        background: linear-gradient(90deg, #f0f7ff 0%, #f5f3ff 100%);
+        box-shadow: 0 4px 12px rgba(59,130,246,0.15);
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -219,10 +310,16 @@ nav_icons = {
     "知识库": "📚"
 }
 
-# 侧边栏导航
+# 侧边栏
 with st.sidebar:
-    st.markdown('<div class="nav-title">AetherOps</div>', unsafe_allow_html=True)
-    st.markdown('<div class="nav-subtitle">智源天机</div>', unsafe_allow_html=True)
+    # 添加Logo
+    col1, col2, col3 = st.columns([1,2,1])
+    with col2:
+        st.image("images/logo.png", width=120, use_container_width=False)
+    
+    # 导航标题
+    st.markdown('<div class="nav-title" style="margin-top: 0; padding-top: 10px;">AetherOps</div>', unsafe_allow_html=True)
+    st.markdown('<div class="nav-subtitle" style="margin-top: -15px;">AI驱动的DevOps平台</div>', unsafe_allow_html=True)
     
     # 创建导航按钮
     for nav_item, icon in nav_icons.items():
@@ -254,6 +351,44 @@ def generate_deployment_data():
         'deployments': [random.randint(1, 5) for _ in range(len(dates))],
         'success_rate': [random.uniform(0.95, 1.0) for _ in range(len(dates))]
     })
+
+# 修复历史模拟数据
+repair_history = [
+    {
+        "id": 1,
+        "time": "2024-06-01 10:00",
+        "type": "自动修复",
+        "desc": "容器CPU异常，已自动重启docker_001",
+        "status": "成功",
+        "detail": {
+            "root_cause": "docker_001 CPU使用率持续超标",
+            "steps": [
+                "检测到CPU异常",
+                "自动重启docker_001",
+                "监控恢复正常"
+            ],
+            "chain": ["异常检测", "自动修复", "验证通过"],
+            "trend": [82, 85, 90, 103, 80]
+        }
+    },
+    {
+        "id": 2,
+        "time": "2024-05-31 16:30",
+        "type": "手动修复",
+        "desc": "数据库连接超时，人工介入优化配置",
+        "status": "成功",
+        "detail": {
+            "root_cause": "数据库连接池配置不足",
+            "steps": [
+                "检测到连接超时",
+                "人工调整连接池参数",
+                "重启数据库服务"
+            ],
+            "chain": ["异常检测", "人工修复", "验证通过"],
+            "trend": [60, 70, 80, 65, 55]
+        }
+    }
+]
 
 # 仪表盘页面
 if page == "仪表盘":
@@ -357,27 +492,143 @@ elif page == "系统监控":
 # AI修复中心页面
 elif page == "AI修复中心":
     st.title("AI修复中心")
+
+    # 自定义修复历史按钮样式
+    st.markdown("""
+    <style>
+    /* 修复历史和详情标题样式 */
+    .repair-section-title {
+        background: linear-gradient(90deg, #1E40AF, #7C3AED);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 28px;
+        font-weight: 800;
+        padding: 10px 0;
+        margin-bottom: 20px;
+        text-align: left;
+        position: relative;
+        display: inline-block;
+    }
     
-    # 故障报告
-    st.subheader("故障报告")
-    issue = st.text_area("故障描述", "API服务响应超时，错误率上升")
+    .repair-section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #1E40AF, #7C3AED);
+        border-radius: 2px;
+    }
     
-    if st.button("AI分析", type="primary"):
-        st.subheader("AI分析结果")
-        st.info("""
-        根因分析：
-        1. 数据库连接池配置不足
-        2. 缓存服务响应延迟
-        3. 负载均衡策略需要优化
+    .repair-history-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .repair-type-auto {
+        background: linear-gradient(90deg, #dbeafe 60%, #f0fdfa 100%);
+        color: #2563eb;
+        padding: 2px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        margin-right: 8px;
+    }
+    .repair-type-manual {
+        background: linear-gradient(90deg, #fef9c3 60%, #f3e8ff 100%);
+        color: #b45309;
+        padding: 2px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        margin-right: 8px;
+    }
+    .stButton button {
+        width: 100%;
+        text-align: left;
+        background: #fff;
+        border: 1.5px solid #e0e7ef;
+        border-radius: 10px;
+        padding: 12px 16px;
+        margin-bottom: 8px;
+        transition: all 0.3s ease;
+    }
+    .stButton button:hover {
+        border-color: #3B82F6;
+        box-shadow: 0 4px 12px rgba(59,130,246,0.1);
+        transform: translateY(-1px);
+    }
+    .stButton button.selected {
+        border-color: #3B82F6;
+        background: linear-gradient(90deg, #f0f7ff 0%, #f5f3ff 100%);
+        box-shadow: 0 4px 12px rgba(59,130,246,0.15);
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    col1, col2 = st.columns([0.8, 2.2], gap="large")
+
+    # 左侧：修复历史
+    with col1:
+        st.markdown('<div class="repair-section-title">修复历史</div>', unsafe_allow_html=True)
         
-        建议修复方案：
-        1. 增加数据库连接池大小
-        2. 优化缓存服务配置
-        3. 调整负载均衡策略
-        """)
+        # 初始化选中状态
+        if 'selected_repair_idx' not in st.session_state:
+            st.session_state.selected_repair_idx = 0
+
+        # 创建修复历史按钮
+        for idx, h in enumerate(repair_history):
+            type_class = "repair-type-auto" if h["type"] == "自动修复" else "repair-type-manual"
+            is_selected = idx == st.session_state.selected_repair_idx
+            
+            # 使用按钮实现选择功能
+            if st.button(
+                f"{h['type']} | {h['desc']} | {h['time']}",
+                key=f"repair_btn_{idx}",
+                use_container_width=True,
+                help=f"点击查看{h['type']}详情"
+            ):
+                st.session_state.selected_repair_idx = idx
+                st.rerun()
+
+        selected_history = repair_history[st.session_state.selected_repair_idx]
+
+    # 右侧：修复过程详情
+    with col2:
+        st.markdown('<div class="repair-section-title">修复过程详情</div>', unsafe_allow_html=True)
+        # 使用卡片样式包装详情内容
+        st.markdown("""
+        <style>
+        .detail-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e0e7ef;
+        }
+        </style>
+        """, unsafe_allow_html=True)
         
-        if st.button("应用修复", type="primary"):
-            st.success("修复已应用并验证通过！")
+        with st.container():
+            st.markdown('<div class="detail-card">', unsafe_allow_html=True)
+            st.markdown(f"**修复类型：** {selected_history['type']}")
+            st.markdown(f"**修复时间：** {selected_history['time']}")
+            st.markdown(f"**修复状态：** {selected_history['status']}")
+            st.markdown(f"**简要描述：** {selected_history['desc']}")
+            st.markdown("---")
+            st.markdown(f"**根因分析：** {selected_history['detail']['root_cause']}")
+            st.markdown("**修复步骤：**")
+            for i, step in enumerate(selected_history['detail']['steps'], 1):
+                st.markdown(f"{i}. {step}")
+            st.markdown("**修复链路：**")
+            st.graphviz_chart(f"""
+                digraph {{
+                    {' -> '.join(selected_history['detail']['chain'])}
+                }}
+            """)
+            st.markdown("**关键指标趋势：**")
+            trend = selected_history['detail']['trend']
+            st.line_chart(trend)
+            st.markdown('</div>', unsafe_allow_html=True)
 
 # 环境管理页面
 elif page == "环境管理":
