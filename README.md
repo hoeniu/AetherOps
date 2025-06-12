@@ -1,8 +1,8 @@
 # AetherOps - AI驱动的智能运维平台
 
 <div align="center">
-
-<img src="images/logo.png" alt="AetherOps Logo" width="200" height="200">
+<img src="images/logo.png" alt="AetherOps Logo" width="150" height="150">
+</div>
 
 <h3>让运维更智能、更高效、更安全</h3>
 <h4>助力企业迈向"零人工干预"的未来！</h4>
@@ -14,17 +14,11 @@
   <img src="https://img.shields.io/badge/platform-linux%20%7C%20windows%20%7C%20macos-lightgrey" alt="Platform">
 </div>
 
-</div>
-
 ---
 
 ## 📖 产品概述
 
-<div align="center">
-
 AetherOps 是一款面向中大型企业与技术团队的 **AI驱动 DevOps 平台**，致力于实现全流程的自动部署、智能运维、系统自愈、AI辅助修复与环境重构，打造"零人工干预"的下一代运维体验。
-
-</div>
 
 ### 🎯 目标用户
 
