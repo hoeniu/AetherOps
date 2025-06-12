@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="images/logo.png" alt="AetherOps Logo" width="100" height="100">
+<img src="images/logo.png" alt="AetherOps Logo" width="200" height="200">
 
 <h3>让运维更智能、更高效、更安全</h3>
 <h4>助力企业迈向"零人工干预"的未来！</h4>
