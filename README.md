@@ -94,6 +94,10 @@ AetherOps 是一款面向中大型企业与技术团队的 **AI驱动 DevOps 平
 
 </div>
 
+## 产品界面预览
+
+![AetherOps 仪表盘界面](images/dashboard.png)
+
 ## 💡 用户痛点解决方案
 
 <div style="overflow-x: auto;">
@@ -139,6 +143,23 @@ AetherOps 是一款面向中大型企业与技术团队的 **AI驱动 DevOps 平
 - Kubernetes (可选)
 - Jenkins (可选)
 
+### 依赖列表
+
+本项目主要依赖以下 Python 包（详见 requirements.txt）：
+
+```text
+streamlit==1.32.0
+python-dotenv==1.0.0
+requests==2.31.0
+PyGithub==2.1.1
+python-gitlab==4.5.0
+coding-sdk==0.1.0
+docker==7.0.0
+kubernetes==29.0.0
+python-jenkins==1.8.0
+openai==1.12.0
+```
+
 ### 安装步骤
 1. 克隆仓库：
 ```bash
@@ -166,7 +187,7 @@ cp .env.example .env
 
 ### 启动应用
 ```bash
-streamlit run app.py
+streamlit run service.py
 ```
 访问 `http://localhost:8501` 开始使用。
 
