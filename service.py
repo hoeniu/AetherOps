@@ -297,6 +297,24 @@ st.markdown("""
         background: linear-gradient(90deg, #f0f7ff 0%, #f5f3ff 100%);
         box-shadow: 0 4px 12px rgba(59,130,246,0.15);
     }
+    
+    .repair-process-btn {
+        background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(59,130,246,0.15);
+    }
+    
+    .repair-process-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(59,130,246,0.25);
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -307,7 +325,8 @@ nav_icons = {
     "系统监控": "📈",
     "AI修复中心": "🔧",
     "环境管理": "🌍",
-    "知识库": "📚"
+    "知识库": "📚",
+    "运维工具": "🛠️"
 }
 
 # 侧边栏
@@ -493,78 +512,33 @@ elif page == "系统监控":
 elif page == "AI修复中心":
     st.title("AI修复中心")
 
-    # 自定义修复历史按钮样式
+    # 添加修复过程按钮
     st.markdown("""
     <style>
-    /* 修复历史和详情标题样式 */
-    .repair-section-title {
-        background: linear-gradient(90deg, #1E40AF, #7C3AED);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 28px;
-        font-weight: 800;
-        padding: 10px 0;
-        margin-bottom: 20px;
-        text-align: left;
-        position: relative;
+    .repair-process-btn {
+        background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
         display: inline-block;
-    }
-    
-    .repair-section-title::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(90deg, #1E40AF, #7C3AED);
-        border-radius: 2px;
-    }
-    
-    .repair-history-container {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-    .repair-type-auto {
-        background: linear-gradient(90deg, #dbeafe 60%, #f0fdfa 100%);
-        color: #2563eb;
-        padding: 2px 10px;
-        border-radius: 6px;
-        font-size: 13px;
-        margin-right: 8px;
-    }
-    .repair-type-manual {
-        background: linear-gradient(90deg, #fef9c3 60%, #f3e8ff 100%);
-        color: #b45309;
-        padding: 2px 10px;
-        border-radius: 6px;
-        font-size: 13px;
-        margin-right: 8px;
-    }
-    .stButton button {
-        width: 100%;
-        text-align: left;
-        background: #fff;
-        border: 1.5px solid #e0e7ef;
-        border-radius: 10px;
-        padding: 12px 16px;
-        margin-bottom: 8px;
+        margin-bottom: 20px;
         transition: all 0.3s ease;
-    }
-    .stButton button:hover {
-        border-color: #3B82F6;
-        box-shadow: 0 4px 12px rgba(59,130,246,0.1);
-        transform: translateY(-1px);
-    }
-    .stButton button.selected {
-        border-color: #3B82F6;
-        background: linear-gradient(90deg, #f0f7ff 0%, #f5f3ff 100%);
         box-shadow: 0 4px 12px rgba(59,130,246,0.15);
+    }
+    .repair-process-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(59,130,246,0.25);
     }
     </style>
     """, unsafe_allow_html=True)
 
+    # 添加修复过程按钮
+    repair_url = "http://10.81.204.55:7777/chat/?scene=chat_agent&id=9b1c7f78-476c-11f0-94f9-2b96f16f267c"
+    st.markdown(f'<a href="{repair_url}" target="_blank" class="repair-process-btn">进入修复过程</a>', unsafe_allow_html=True)
+
+    # 自定义修复历史按钮样式
     col1, col2 = st.columns([0.8, 2.2], gap="large")
 
     # 左侧：修复历史
@@ -674,3 +648,8 @@ elif page == "知识库":
     st.subheader("知识库管理")
     if st.button("上传文档"):
         st.info("支持上传PDF、Word、Markdown等格式的文档")
+
+# 运维工具页面
+elif page == "运维工具":
+    import ops_tools
+    # 直接调用ops_tools.py的内容（Streamlit会自动渲染）
