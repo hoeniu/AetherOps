@@ -3,7 +3,7 @@ python-dotenv==1.0.0
 requests==2.31.0
 PyGithub==2.1.1
 python-gitlab==4.5.0
-coding-sdk==0.1.0
+# coding-sdk==0.1.0
 docker==7.0.0
 kubernetes==29.0.0
 python-jenkins==1.8.0
