@@ -33,7 +33,7 @@ from kbx.splitter.splitter_factory import get_splitter
 from kbx.splitter.types import SplitterConfig
 
 
-class BaseDocProcessor:
+class BaseProcessor:
     """基础文档处理器
 
     提供文档处理的基础功能，包括：

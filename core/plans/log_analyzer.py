@@ -12,7 +12,7 @@ import re
 import time
 import concurrent.futures
 
-from core.base_processor import BaseDocProcessor
+from core.base_processor import BaseProcessor
 from core.prompts.log_analysis import (
     LOG_ANALYSIS_PROMPT,
     LOG_SUMMARY_PROMPT,
@@ -26,7 +26,7 @@ from kbx.common.logging import logger
 
 CHINA_TZ = pytz.timezone('Asia/Shanghai')
 
-class AIModelLogAnalyzer(BaseDocProcessor):
+class AIModelLogAnalyzer(BaseProcessor):
     """
     AI大模型日志分析器
     
