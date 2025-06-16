@@ -1,0 +1,15 @@
+# 参考KBCreationConfig数据结构
+# 运维AI知识库配置，用于存储和处理运维相关的知识
+name: 运维AI知识库
+description: 这是一个专注于运维领域的AI知识库，包含系统监控、故障诊断、性能优化、安全防护等运维知识
+is_external_datastore: false
+vector_keyword_config:
+  # 优化分块策略，适应运维文档特点
+  index_strategy: DefaultVectorKeywordIndex
+  splitter_config:
+    chunk_size: 2000  # 减小chunk大小，使检索更精确
+    name: NaiveTextSplitter
+    overlap: 200  # 添加重叠，保持上下文连贯性
+kg_config: null
+rerank_config: null
+structured_config: null

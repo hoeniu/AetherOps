@@ -1,0 +1,42 @@
+#coding=utf-8
+# 不带celery的本地部署配置
+work_dir: volumes
+cache_dir: kbx_tmp
+log_file: logs/kbx.log
+host: 0.0.0.0
+port: 30018
+log_level: DEBUG
+upload_file_batch_limit: 100000
+file_service_prefix: http://127.0.0.1:30018/kb_files
+file_ds:
+  type: nano_filesystem
+  connection_kwargs: {}
+doc_ds:
+  type: nano_docsystem
+  connection_kwargs: {}
+system_db:
+  type: sqlite
+  connection_kwargs:
+    db_path: "kbx_system_db.db"
+    pool_size: 5
+    echo: false
+    pool_recycle: -1
+structured_ds:
+  type: sqlalchemy_sqlite
+  connection_kwargs:
+    username: "default"
+    password: "default"
+    host: "default"
+    port: "default"
+    pool_recycle: -1
+    is_service: False
+    is_external: False
+keyword_ds:
+  type: nano
+  connection_kwargs: {}
+vector_ds:
+  type: chroma
+  connection_kwargs: {}
+graph_ds:
+  type: networkx
+  connection_kwargs: {}
