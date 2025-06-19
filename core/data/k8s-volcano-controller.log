@@ -1,0 +1,635 @@
+I0122 08:29:24.096530       1 flags.go:57] FLAG: --add-dir-header="false"
+I0122 08:29:24.096748       1 flags.go:57] FLAG: --alsologtostderr="false"
+I0122 08:29:24.096752       1 flags.go:57] FLAG: --enable-healthz="true"
+I0122 08:29:24.096756       1 flags.go:57] FLAG: --healthz-address=":11251"
+I0122 08:29:24.096761       1 flags.go:57] FLAG: --inherit-owner-annotations="true"
+I0122 08:29:24.096763       1 flags.go:57] FLAG: --kube-api-burst="100"
+I0122 08:29:24.096767       1 flags.go:57] FLAG: --kube-api-qps="50"
+I0122 08:29:24.096771       1 flags.go:57] FLAG: --kubeconfig=""
+I0122 08:29:24.096774       1 flags.go:57] FLAG: --leader-elect="false"
+I0122 08:29:24.096777       1 flags.go:57] FLAG: --lock-object-namespace="volcano-system"
+I0122 08:29:24.096780       1 flags.go:57] FLAG: --log-backtrace-at=":0"
+I0122 08:29:24.096795       1 flags.go:57] FLAG: --log-dir=""
+I0122 08:29:24.096798       1 flags.go:57] FLAG: --log-file=""
+I0122 08:29:24.096801       1 flags.go:57] FLAG: --log-file-max-size="1800"
+I0122 08:29:24.096803       1 flags.go:57] FLAG: --log-flush-frequency="5s"
+I0122 08:29:24.096807       1 flags.go:57] FLAG: --logtostderr="true"
+I0122 08:29:24.096812       1 flags.go:57] FLAG: --master=""
+I0122 08:29:24.096814       1 flags.go:57] FLAG: --max-requeue-num="15"
+I0122 08:29:24.096817       1 flags.go:57] FLAG: --one-output="false"
+I0122 08:29:24.096819       1 flags.go:57] FLAG: --scheduler-name="[volcano,volcano-llm]"
+I0122 08:29:24.096836       1 flags.go:57] FLAG: --skip-headers="false"
+I0122 08:29:24.096838       1 flags.go:57] FLAG: --skip-log-headers="false"
+I0122 08:29:24.096841       1 flags.go:57] FLAG: --stderrthreshold="2"
+I0122 08:29:24.096845       1 flags.go:57] FLAG: --tls-cert-file=""
+I0122 08:29:24.096848       1 flags.go:57] FLAG: --tls-private-key-file=""
+I0122 08:29:24.096851       1 flags.go:57] FLAG: --v="4"
+I0122 08:29:24.096853       1 flags.go:57] FLAG: --version="false"
+I0122 08:29:24.096856       1 flags.go:57] FLAG: --vmodule=""
+I0122 08:29:24.096860       1 flags.go:57] FLAG: --worker-threads="3"
+I0122 08:29:24.096864       1 flags.go:57] FLAG: --worker-threads-for-podgroup="1"
+W0122 08:29:24.096932       1 client_config.go:618] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+I0122 08:29:24.099674       1 garbagecollector.go:97] Starting garbage collector
+I0122 08:29:24.100274       1 reflector.go:287] Starting reflector *v1alpha1.Job (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.100348       1 reflector.go:323] Listing and watching *v1alpha1.Job from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.103775       1 reflector.go:287] Starting reflector *v1.Service (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.103836       1 reflector.go:323] Listing and watching *v1.Service from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.104536       1 reflector.go:287] Starting reflector *v1alpha1.Job (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.104586       1 reflector.go:323] Listing and watching *v1alpha1.Job from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.104728       1 reflector.go:287] Starting reflector *v1.ReplicaSet (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.104882       1 reflector.go:323] Listing and watching *v1.ReplicaSet from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.104832       1 reflector.go:287] Starting reflector *v1.PriorityClass (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.105045       1 reflector.go:323] Listing and watching *v1.PriorityClass from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.105002       1 reflector.go:287] Starting reflector *v1beta1.PodGroup (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.105378       1 reflector.go:287] Starting reflector *v1.Pod (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.106036       1 reflector.go:287] Starting reflector *v1beta1.Queue (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.106020       1 reflector.go:287] Starting reflector *v1beta1.PodGroup (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.106114       1 reflector.go:323] Listing and watching *v1beta1.Queue from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.105453       1 reflector.go:323] Listing and watching *v1beta1.PodGroup from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.106179       1 reflector.go:323] Listing and watching *v1beta1.PodGroup from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.106065       1 reflector.go:323] Listing and watching *v1.Pod from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.107600       1 reflector.go:287] Starting reflector *v1alpha1.Command (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.107647       1 reflector.go:323] Listing and watching *v1alpha1.Command from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.108108       1 reflector.go:287] Starting reflector *v1.PersistentVolumeClaim (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.108216       1 reflector.go:323] Listing and watching *v1.PersistentVolumeClaim from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.108909       1 queue_controller.go:179] Starting queue controller.
+I0122 08:29:24.109121       1 reflector.go:287] Starting reflector *v1beta1.PodGroup (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.109160       1 reflector.go:323] Listing and watching *v1beta1.PodGroup from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.109159       1 reflector.go:287] Starting reflector *v1alpha1.Command (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.109173       1 reflector.go:287] Starting reflector *v1beta1.Queue (0s) from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.109215       1 reflector.go:323] Listing and watching *v1beta1.Queue from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.109192       1 reflector.go:323] Listing and watching *v1alpha1.Command from pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231
+I0122 08:29:24.161218       1 garbagecollector.go:115] Adding job e428b092f4f2440fbb5c419623837059/visual-lyayfahe
+I0122 08:29:24.161297       1 garbagecollector.go:115] Adding job e428b092f4f2440fbb5c419623837059/train-kpzbtmjp
+I0122 08:29:24.161322       1 garbagecollector.go:115] Adding job e428b092f4f2440fbb5c419623837059/notebook-jlroqrxy
+I0122 08:29:24.161359       1 garbagecollector.go:115] Adding job e428b092f4f2440fbb5c419623837059/inference-absrbfej
+I0122 08:29:24.161399       1 garbagecollector.go:115] Adding job default/lm-mpi-job
+I0122 08:29:24.161422       1 garbagecollector.go:115] Adding job e428b092f4f2440fbb5c419623837059/train-azpabbhj
+I0122 08:29:24.200586       1 shared_informer.go:341] caches populated
+I0122 08:29:24.202993       1 shared_informer.go:341] caches populated
+I0122 08:29:24.205332       1 shared_informer.go:341] caches populated
+I0122 08:29:24.205367       1 shared_informer.go:341] caches populated
+I0122 08:29:24.209658       1 shared_informer.go:341] caches populated
+I0122 08:29:24.209692       1 shared_informer.go:341] caches populated
+I0122 08:29:24.209702       1 shared_informer.go:341] caches populated
+I0122 08:29:24.209802       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:29:24.209890       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:29:24.210046       1 queue_controller_action.go:73] End sync queue default.
+I0122 08:29:24.210070       1 queue_controller.go:228] Finished syncing queue default (274.429µs).
+I0122 08:29:24.210110       1 queue_controller.go:246] Begin execute SyncQueue action for queue default-llm, current status Open
+I0122 08:29:24.210134       1 queue_controller_action.go:35] Begin to sync queue default-llm.
+I0122 08:29:24.210161       1 queue_controller_action.go:73] End sync queue default-llm.
+I0122 08:29:24.210173       1 queue_controller.go:228] Finished syncing queue default-llm (67.914µs).
+I0122 08:29:24.210190       1 queue_controller.go:246] Begin execute SyncQueue action for queue 3d68f9a29c284c40a7c4260171cd6e75, current status Open
+I0122 08:29:24.210212       1 queue_controller_action.go:35] Begin to sync queue 3d68f9a29c284c40a7c4260171cd6e75.
+I0122 08:29:24.210237       1 queue_controller_action.go:73] End sync queue 3d68f9a29c284c40a7c4260171cd6e75.
+I0122 08:29:24.210255       1 queue_controller.go:228] Finished syncing queue 3d68f9a29c284c40a7c4260171cd6e75 (67.994µs).
+I0122 08:29:24.210270       1 queue_controller.go:246] Begin execute SyncQueue action for queue shared-workload, current status Open
+I0122 08:29:24.210280       1 queue_controller_action.go:35] Begin to sync queue shared-workload.
+I0122 08:29:24.210302       1 queue_controller_action.go:73] End sync queue shared-workload.
+I0122 08:29:24.210320       1 queue_controller.go:228] Finished syncing queue shared-workload (52.618µs).
+I0122 08:29:24.306552       1 shared_informer.go:341] caches populated
+I0122 08:29:24.403789       1 shared_informer.go:341] caches populated
+I0122 08:29:24.403844       1 shared_informer.go:341] caches populated
+I0122 08:29:24.403857       1 shared_informer.go:341] caches populated
+I0122 08:29:24.403881       1 shared_informer.go:341] caches populated
+I0122 08:29:24.403893       1 shared_informer.go:341] caches populated
+I0122 08:29:24.403903       1 shared_informer.go:341] caches populated
+I0122 08:29:24.403914       1 shared_informer.go:341] caches populated
+I0122 08:29:24.403978       1 job_controller.go:274] JobController is running ...... 
+I0122 08:29:24.404035       1 job_controller.go:278] worker 2 start ...... 
+I0122 08:29:24.404047       1 job_controller.go:278] worker 1 start ...... 
+I0122 08:29:24.404150       1 job_controller.go:278] worker 0 start ...... 
+I0122 08:29:24.404226       1 job_controller.go:329] Try to handle request <Queue: , Job: e428b092f4f2440fbb5c419623837059/inference-absrbfej, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 08:29:24.404394       1 job_controller.go:346] Execute <SyncJob> on Job <e428b092f4f2440fbb5c419623837059/inference-absrbfej> in <Aborted> by <*state.abortedState>.
+I0122 08:29:24.404073       1 job_controller.go:329] Try to handle request <Queue: , Job: e428b092f4f2440fbb5c419623837059/visual-lyayfahe, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 08:29:24.404524       1 job_controller_actions.go:48] Killing Job <e428b092f4f2440fbb5c419623837059/inference-absrbfej>, current version 8
+I0122 08:29:24.404566       1 job_controller.go:346] Execute <SyncJob> on Job <e428b092f4f2440fbb5c419623837059/visual-lyayfahe> in <Completed> by <*state.finishedState>.
+I0122 08:29:24.404599       1 job_controller_actions.go:48] Killing Job <e428b092f4f2440fbb5c419623837059/visual-lyayfahe>, current version 1
+I0122 08:29:24.404095       1 job_controller.go:329] Try to handle request <Queue: , Job: e428b092f4f2440fbb5c419623837059/train-kpzbtmjp, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 08:29:24.404696       1 job_controller.go:346] Execute <SyncJob> on Job <e428b092f4f2440fbb5c419623837059/train-kpzbtmjp> in <Aborted> by <*state.abortedState>.
+I0122 08:29:24.404727       1 job_controller_actions.go:48] Killing Job <e428b092f4f2440fbb5c419623837059/train-kpzbtmjp>, current version 3
+I0122 08:29:24.404829       1 job_controller_actions.go:122] Running duration is 816h10m47.404815645s
+I0122 08:29:24.404848       1 job_controller_actions.go:122] Running duration is 1206h6m14.404834311s
+I0122 08:29:24.404854       1 job_controller_actions.go:122] Running duration is 1061h18m29.404838909s
+I0122 08:29:24.404871       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: env on job: <e428b092f4f2440fbb5c419623837059/train-kpzbtmjp>
+I0122 08:29:24.404876       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: env on job: <e428b092f4f2440fbb5c419623837059/inference-absrbfej>
+I0122 08:29:24.404911       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: mount on job: <e428b092f4f2440fbb5c419623837059/train-kpzbtmjp>
+I0122 08:29:24.405035       1 mount.go:74] mount plugin OnJobDelete
+I0122 08:29:24.405058       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: ssh on job: <e428b092f4f2440fbb5c419623837059/train-kpzbtmjp>
+I0122 08:29:24.404916       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: ingress on job: <e428b092f4f2440fbb5c419623837059/inference-absrbfej>
+I0122 08:29:24.405119       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: svc on job: <e428b092f4f2440fbb5c419623837059/train-kpzbtmjp>
+I0122 08:29:24.405210       1 ingress.go:107] ingress plugin OnJobDelete
+I0122 08:29:24.405243       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: ssh on job: <e428b092f4f2440fbb5c419623837059/inference-absrbfej>
+I0122 08:29:24.404873       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: ingress on job: <e428b092f4f2440fbb5c419623837059/visual-lyayfahe>
+I0122 08:29:24.405268       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: svc on job: <e428b092f4f2440fbb5c419623837059/inference-absrbfej>
+I0122 08:29:24.405317       1 ingress.go:107] ingress plugin OnJobDelete
+I0122 08:29:24.407571       1 shared_informer.go:341] caches populated
+I0122 08:29:24.407616       1 shared_informer.go:341] caches populated
+I0122 08:29:24.407636       1 shared_informer.go:341] caches populated
+I0122 08:29:24.407656       1 pg_controller.go:140] PodgroupController is running ...... 
+E0122 08:29:24.408055       1 pg_controller.go:160] Failed to get pod by <{volcano-controllers-f949d468b-4m74g volcano-system}> from cache: pod "volcano-controllers-f949d468b-4m74g" not found
+I0122 08:29:24.432626       1 job_controller_actions.go:163] Finished Job <e428b092f4f2440fbb5c419623837059/train-kpzbtmjp> killing, current version 3
+I0122 08:29:24.432699       1 job_controller.go:329] Try to handle request <Queue: , Job: e428b092f4f2440fbb5c419623837059/notebook-jlroqrxy, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 08:29:24.432736       1 job_controller.go:346] Execute <SyncJob> on Job <e428b092f4f2440fbb5c419623837059/notebook-jlroqrxy> in <Aborted> by <*state.abortedState>.
+I0122 08:29:24.432754       1 job_controller_actions.go:48] Killing Job <e428b092f4f2440fbb5c419623837059/notebook-jlroqrxy>, current version 3
+I0122 08:29:24.432827       1 job_controller_actions.go:122] Running duration is 1126h18m12.432814288s
+I0122 08:29:24.432858       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: env on job: <e428b092f4f2440fbb5c419623837059/notebook-jlroqrxy>
+I0122 08:29:24.432873       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: ingress on job: <e428b092f4f2440fbb5c419623837059/notebook-jlroqrxy>
+flag provided but not defined: -auth-ingres-path
+Usage of ingress:
+  -disable-network-policy
+    	set disableNetworkPolicy of svc to true
+  -ingress-class nginx
+    	set ingress class, it is nginx by default. (default "nginx")
+  -ingress-host
+    	set ingress host, it is  by default.
+  -ingress-path /
+    	set ingress path, it is / by default. (default "/")
+  -labels string
+    	set labels for ingress and svc, it is json string format, eg: '{"app":"nginx"}'
+  -prefix-path-type PrefixPathType
+    	set prefix path type, it is PrefixPathType by default. (default "Prefix")
+  -publish-not-ready-addresses
+    	set publishNotReadyAddresses of svc to true
+  -rewrite-target /
+    	set rewrite target, it is / by default.
+  -svc-port 80
+    	set svc port, it is 80 by default. (default 80)
+E0122 08:29:24.433084       1 ingress.go:77] plugin ingress flagset parse failed, err: flag provided but not defined: -auth-ingres-path
+I0122 08:29:24.433110       1 ingress.go:107] ingress plugin OnJobDelete
+I0122 08:29:24.433123       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: ssh on job: <e428b092f4f2440fbb5c419623837059/notebook-jlroqrxy>
+I0122 08:29:24.433144       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: sshpiper on job: <e428b092f4f2440fbb5c419623837059/notebook-jlroqrxy>
+I0122 08:29:24.433185       1 garbagecollector.go:124] Updating job e428b092f4f2440fbb5c419623837059/train-kpzbtmjp
+I0122 08:29:24.433660       1 sshpiper.go:95] sshpiper plugin OnJobDelete
+I0122 08:29:24.433694       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: svc on job: <e428b092f4f2440fbb5c419623837059/notebook-jlroqrxy>
+I0122 08:29:24.434130       1 job_controller_actions.go:163] Finished Job <e428b092f4f2440fbb5c419623837059/inference-absrbfej> killing, current version 8
+I0122 08:29:24.434181       1 job_controller.go:329] Try to handle request <Queue: , Job: e428b092f4f2440fbb5c419623837059/train-azpabbhj, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 08:29:24.434210       1 job_controller.go:346] Execute <SyncJob> on Job <e428b092f4f2440fbb5c419623837059/train-azpabbhj> in <Aborted> by <*state.abortedState>.
+I0122 08:29:24.434234       1 job_controller_actions.go:48] Killing Job <e428b092f4f2440fbb5c419623837059/train-azpabbhj>, current version 3
+I0122 08:29:24.434299       1 job_controller_actions.go:122] Running duration is 1126h19m8.434287792s
+I0122 08:29:24.434318       1 job_controller_actions.go:163] Finished Job <e428b092f4f2440fbb5c419623837059/visual-lyayfahe> killing, current version 1
+I0122 08:29:24.434325       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: svc on job: <e428b092f4f2440fbb5c419623837059/train-azpabbhj>
+I0122 08:29:24.434397       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: env on job: <e428b092f4f2440fbb5c419623837059/train-azpabbhj>
+I0122 08:29:24.434438       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: ssh on job: <e428b092f4f2440fbb5c419623837059/train-azpabbhj>
+I0122 08:29:24.436600       1 garbagecollector.go:124] Updating job e428b092f4f2440fbb5c419623837059/visual-lyayfahe
+I0122 08:29:24.438204       1 garbagecollector.go:124] Updating job e428b092f4f2440fbb5c419623837059/inference-absrbfej
+I0122 08:29:24.446833       1 garbagecollector.go:124] Updating job e428b092f4f2440fbb5c419623837059/train-azpabbhj
+I0122 08:29:24.448312       1 job_controller_actions.go:163] Finished Job <e428b092f4f2440fbb5c419623837059/notebook-jlroqrxy> killing, current version 3
+I0122 08:29:24.448346       1 job_controller.go:329] Try to handle request <Queue: , Job: default/lm-mpi-job, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 08:29:24.448366       1 job_controller.go:346] Execute <SyncJob> on Job <default/lm-mpi-job> in <Completed> by <*state.finishedState>.
+I0122 08:29:24.448374       1 job_controller_actions.go:48] Killing Job <default/lm-mpi-job>, current version 7
+I0122 08:29:24.448412       1 garbagecollector.go:124] Updating job e428b092f4f2440fbb5c419623837059/notebook-jlroqrxy
+I0122 08:29:24.448433       1 job_controller_actions.go:122] Running duration is 1661h0m16.448426302s
+I0122 08:29:24.448489       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: svc on job: <default/lm-mpi-job>
+I0122 08:29:24.448523       1 job_controller_plugins.go:82] Starting to execute plugin at <pluginOnJobDelete>: ssh on job: <default/lm-mpi-job>
+I0122 08:29:24.449574       1 job_controller_actions.go:163] Finished Job <e428b092f4f2440fbb5c419623837059/train-azpabbhj> killing, current version 3
+I0122 08:29:24.460216       1 job_controller_actions.go:163] Finished Job <default/lm-mpi-job> killing, current version 7
+I0122 08:29:24.461069       1 garbagecollector.go:124] Updating job default/lm-mpi-job
+I0122 08:34:38.153450       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 0 items received
+I0122 08:34:46.172636       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.PersistentVolumeClaim total 7 items received
+I0122 08:35:19.179953       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Job total 12 items received
+I0122 08:35:26.230229       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.ReplicaSet total 10 items received
+I0122 08:36:00.151365       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.Queue total 5 items received
+I0122 08:36:22.150624       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 0 items received
+I0122 08:36:29.185261       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.Service total 0 items received
+I0122 08:36:53.159091       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Command total 8 items received
+I0122 08:37:13.152495       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.Queue total 6 items received
+I0122 08:37:40.157956       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.PriorityClass total 3 items received
+I0122 08:38:07.154288       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Command total 10 items received
+I0122 08:38:22.323115       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.Pod total 77 items received
+I0122 08:38:54.155257       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 3 items received
+I0122 08:38:54.173607       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Job total 16 items received
+I0122 08:41:18.165459       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 6 items received
+I0122 08:41:23.157335       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 6 items received
+I0122 08:42:14.237922       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.ReplicaSet total 3 items received
+I0122 08:42:34.192100       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.Service total 7 items received
+I0122 08:43:29.190698       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Job total 0 items received
+I0122 08:43:30.181352       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.PersistentVolumeClaim total 4 items received
+I0122 08:43:35.330077       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.Pod total 24 items received
+I0122 08:44:02.179044       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Job total 2 items received
+I0122 08:44:07.163980       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 0 items received
+I0122 08:45:01.160793       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.Queue total 3 items received
+I0122 08:45:56.353031       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:45:56.353102       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:45:56.364172       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:45:56.364239       1 queue_controller.go:228] Finished syncing queue default (11.252814ms).
+I0122 08:45:56.569506       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:45:56.569558       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:45:56.569854       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-87740462-7faf-4d69-9368-e9f72162b388, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:45:56.570012       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-87740462-7faf-4d69-9368-e9f72162b388, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-87740462-7faf-4d69-9368-e9f72162b388>
+I0122 08:45:56.581774       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:45:56.581828       1 queue_controller.go:228] Finished syncing queue default (12.348226ms).
+I0122 08:45:57.016618       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:45:57.016672       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:45:57.017355       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-87740462-7faf-4d69-9368-e9f72162b388, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:45:57.017447       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-87740462-7faf-4d69-9368-e9f72162b388, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-87740462-7faf-4d69-9368-e9f72162b388>
+I0122 08:45:57.030747       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:45:57.030850       1 queue_controller.go:228] Finished syncing queue default (14.255754ms).
+I0122 08:45:57.166917       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Command total 7 items received
+I0122 08:46:05.167378       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.PriorityClass total 0 items received
+I0122 08:47:03.163253       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.Queue total 8 items received
+I0122 08:47:24.242346       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.ReplicaSet total 0 items received
+I0122 08:47:31.162273       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Command total 9 items received
+I0122 08:47:41.164306       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 7 items received
+I0122 08:47:59.773073       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:47:59.773122       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:47:59.773332       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-87740462-7faf-4d69-9368-e9f72162b388, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:47:59.773404       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-87740462-7faf-4d69-9368-e9f72162b388, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-87740462-7faf-4d69-9368-e9f72162b388>
+I0122 08:47:59.785181       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:47:59.785225       1 queue_controller.go:228] Finished syncing queue default (12.175269ms).
+I0122 08:47:59.823372       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-87740462-7faf-4d69-9368-e9f72162b388, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:47:59.823460       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-87740462-7faf-4d69-9368-e9f72162b388, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-87740462-7faf-4d69-9368-e9f72162b388>
+I0122 08:47:59.824519       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:47:59.824567       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:47:59.835981       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:47:59.836026       1 queue_controller.go:228] Finished syncing queue default (11.524711ms).
+I0122 08:48:01.368161       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:48:01.368210       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:48:01.374086       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:48:01.374131       1 queue_controller.go:228] Finished syncing queue default (5.993057ms).
+I0122 08:48:09.198492       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:48:09.198543       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:48:09.208511       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:48:09.208558       1 queue_controller.go:228] Finished syncing queue default (10.08911ms).
+I0122 08:48:09.890905       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:48:09.890959       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:48:09.891150       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-b541c712-d482-45da-b418-f4a1832b4867, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:48:09.891245       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-b541c712-d482-45da-b418-f4a1832b4867, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-b541c712-d482-45da-b418-f4a1832b4867>
+I0122 08:48:09.921587       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:48:09.921636       1 queue_controller.go:228] Finished syncing queue default (30.759167ms).
+I0122 08:48:09.978340       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:48:09.978389       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:48:09.986034       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-b541c712-d482-45da-b418-f4a1832b4867, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:48:09.986092       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-b541c712-d482-45da-b418-f4a1832b4867, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-b541c712-d482-45da-b418-f4a1832b4867>
+I0122 08:48:09.990308       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:48:09.990361       1 queue_controller.go:228] Finished syncing queue default (12.044062ms).
+I0122 08:49:29.166569       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 15 items received
+I0122 08:49:31.192346       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.Service total 2 items received
+I0122 08:50:16.189280       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Job total 7 items received
+I0122 08:50:24.198343       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:50:24.198478       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:50:24.198324       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-b541c712-d482-45da-b418-f4a1832b4867, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:50:24.198738       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-b541c712-d482-45da-b418-f4a1832b4867, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-b541c712-d482-45da-b418-f4a1832b4867>
+I0122 08:50:24.212566       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:50:24.212615       1 queue_controller.go:228] Finished syncing queue default (14.381171ms).
+I0122 08:50:24.841329       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:50:24.841389       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:50:24.841549       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-b541c712-d482-45da-b418-f4a1832b4867, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:50:24.841729       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-b541c712-d482-45da-b418-f4a1832b4867, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-b541c712-d482-45da-b418-f4a1832b4867>
+I0122 08:50:24.849040       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:50:24.849083       1 queue_controller.go:228] Finished syncing queue default (7.781051ms).
+I0122 08:50:39.179730       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.PersistentVolumeClaim total 0 items received
+I0122 08:50:41.957107       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:50:41.957160       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:50:41.966780       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:50:41.966804       1 queue_controller.go:228] Finished syncing queue default (9.72191ms).
+I0122 08:50:47.871521       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:50:47.871575       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:50:47.886065       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:50:47.886107       1 queue_controller.go:228] Finished syncing queue default (14.676972ms).
+I0122 08:50:48.049128       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:50:48.049220       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:50:48.049555       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-a24753f4-80b1-497a-9421-814e29603b52, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:50:48.049630       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-a24753f4-80b1-497a-9421-814e29603b52, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-a24753f4-80b1-497a-9421-814e29603b52>
+I0122 08:50:48.068559       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:50:48.068624       1 queue_controller.go:228] Finished syncing queue default (19.533501ms).
+I0122 08:50:59.166369       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.Queue total 20 items received
+I0122 08:52:16.444217       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-a24753f4-80b1-497a-9421-814e29603b52, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:52:16.444286       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-a24753f4-80b1-497a-9421-814e29603b52, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-a24753f4-80b1-497a-9421-814e29603b52>
+I0122 08:52:16.444601       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:52:16.444728       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:52:16.455372       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:52:16.455460       1 queue_controller.go:228] Finished syncing queue default (10.879197ms).
+I0122 08:52:16.637846       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:52:16.637919       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:52:16.638552       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-a24753f4-80b1-497a-9421-814e29603b52, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:52:16.638622       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-a24753f4-80b1-497a-9421-814e29603b52, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-a24753f4-80b1-497a-9421-814e29603b52>
+I0122 08:52:16.649066       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:52:16.649118       1 queue_controller.go:228] Finished syncing queue default (11.313486ms).
+I0122 08:52:17.709844       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:52:17.709895       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:52:17.717490       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:52:17.717520       1 queue_controller.go:228] Finished syncing queue default (7.698885ms).
+I0122 08:52:23.956168       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:52:23.956221       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:52:23.969947       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:52:23.969990       1 queue_controller.go:228] Finished syncing queue default (13.842917ms).
+I0122 08:52:24.510492       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:52:24.510612       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:52:24.510753       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-7c3b82d7-c751-43e9-b88f-ac023fe3931d, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:52:24.510842       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-7c3b82d7-c751-43e9-b88f-ac023fe3931d, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-7c3b82d7-c751-43e9-b88f-ac023fe3931d>
+I0122 08:52:24.529231       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:52:24.529290       1 queue_controller.go:228] Finished syncing queue default (18.82198ms).
+I0122 08:52:24.751458       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:52:24.751521       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:52:24.751645       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-7c3b82d7-c751-43e9-b88f-ac023fe3931d, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:52:24.751708       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-7c3b82d7-c751-43e9-b88f-ac023fe3931d, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-7c3b82d7-c751-43e9-b88f-ac023fe3931d>
+I0122 08:52:24.770362       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:52:24.770415       1 queue_controller.go:228] Finished syncing queue default (18.985406ms).
+I0122 08:52:29.321780       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.Pod total 195 items received
+I0122 08:52:30.237898       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.ReplicaSet total 18 items received
+I0122 08:52:56.161557       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 28 items received
+I0122 08:53:12.165964       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Command total 3 items received
+I0122 08:53:40.172383       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Job total 0 items received
+I0122 08:54:34.156496       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.PriorityClass total 8 items received
+I0122 08:54:44.631037       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:54:44.631104       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:54:44.631342       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-7c3b82d7-c751-43e9-b88f-ac023fe3931d, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:54:44.631442       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-7c3b82d7-c751-43e9-b88f-ac023fe3931d, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-7c3b82d7-c751-43e9-b88f-ac023fe3931d>
+I0122 08:54:44.647043       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:54:44.647093       1 queue_controller.go:228] Finished syncing queue default (16.086602ms).
+I0122 08:54:44.799168       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:54:44.799227       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:54:44.799504       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-7c3b82d7-c751-43e9-b88f-ac023fe3931d, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:54:44.799618       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-7c3b82d7-c751-43e9-b88f-ac023fe3931d, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-7c3b82d7-c751-43e9-b88f-ac023fe3931d>
+I0122 08:54:44.817783       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:54:44.817881       1 queue_controller.go:228] Finished syncing queue default (18.736359ms).
+I0122 08:54:45.237612       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:54:45.237674       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:54:45.243998       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:54:45.244044       1 queue_controller.go:228] Finished syncing queue default (6.468372ms).
+I0122 08:54:50.737785       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:54:50.737854       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:54:50.752199       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:54:50.752244       1 queue_controller.go:228] Finished syncing queue default (14.479682ms).
+I0122 08:54:50.841342       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:54:50.841414       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:54:50.841683       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-bab002b2-fb02-4a77-99dd-c26774b07885, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:54:50.841749       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-bab002b2-fb02-4a77-99dd-c26774b07885, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-bab002b2-fb02-4a77-99dd-c26774b07885>
+I0122 08:54:50.850256       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:54:50.850300       1 queue_controller.go:228] Finished syncing queue default (8.976166ms).
+I0122 08:54:51.718909       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-bab002b2-fb02-4a77-99dd-c26774b07885, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 08:54:51.719005       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-bab002b2-fb02-4a77-99dd-c26774b07885, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-bab002b2-fb02-4a77-99dd-c26774b07885>
+I0122 08:54:51.719332       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 08:54:51.719385       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 08:54:51.728602       1 queue_controller_action.go:83] End sync queue default.
+I0122 08:54:51.728665       1 queue_controller.go:228] Finished syncing queue default (9.361093ms).
+I0122 08:54:57.153421       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Command total 5 items received
+I0122 08:55:28.155233       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.Queue total 33 items received
+I0122 08:57:10.157952       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 27 items received
+I0122 08:57:18.150555       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 35 items received
+I0122 08:57:23.174240       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.PersistentVolumeClaim total 8 items received
+I0122 08:58:10.183200       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.Service total 0 items received
+I0122 08:58:24.183284       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Job total 5 items received
+I0122 08:59:17.179269       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Job total 6 items received
+I0122 08:59:28.233984       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.ReplicaSet total 0 items received
+I0122 09:00:31.162452       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.Queue total 23 items received
+I0122 09:00:38.160698       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Command total 0 items received
+I0122 09:00:45.150174       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Command total 0 items received
+I0122 09:01:14.157673       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 15 items received
+I0122 09:01:52.317267       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.Pod total 59 items received
+I0122 09:02:34.177800       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.PersistentVolumeClaim total 2 items received
+I0122 09:04:21.153934       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.PriorityClass total 8 items received
+I0122 09:04:23.152469       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.Queue total 0 items received
+I0122 09:05:26.151182       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 0 items received
+I0122 09:05:49.181648       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.Service total 9 items received
+I0122 09:06:15.159035       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 0 items received
+I0122 09:06:34.236168       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.ReplicaSet total 7 items received
+I0122 09:06:51.158519       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.PodGroup total 0 items received
+I0122 09:06:53.204760       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:06:53.204821       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:06:53.204862       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:06:53.204983       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.205017       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:06:53.205037       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.205074       1 garbagecollector.go:115] Adding job default/gpu-vcjob1
+I0122 09:06:53.210489       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:06:53.210548       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:06:53.210568       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:06:53.210639       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.210669       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:06:53.210689       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.221091       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:06:53.221147       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:06:53.221163       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:06:53.221199       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.221229       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:06:53.221247       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.241660       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:06:53.241711       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:06:53.241729       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:06:53.241782       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.241800       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:06:53.241826       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.282237       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:06:53.282298       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:06:53.282318       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:06:53.282404       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.282434       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:06:53.282452       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.362909       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:06:53.362980       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:06:53.362999       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:06:53.363037       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.363056       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:06:53.363087       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.523650       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:06:53.523713       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:06:53.523733       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:06:53.523782       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.523801       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:06:53.523824       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.844569       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:06:53.844648       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:06:53.844697       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:06:53.844758       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:06:53.844783       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:06:53.844806       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:06:54.485843       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:06:54.485923       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:06:54.485948       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:06:54.486021       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:06:54.486041       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:06:54.486062       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:06:55.766546       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:06:55.766627       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:06:55.766652       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:06:55.766728       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:06:55.766759       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:06:55.766887       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:06:58.328813       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:06:58.328897       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:06:58.328922       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:06:58.329062       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:06:58.329186       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:06:58.329280       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:07:03.450722       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:07:03.451068       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:07:03.451096       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:07:03.451156       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:07:03.451178       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:07:03.451200       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:07:08.319207       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.Pod total 23 items received
+I0122 09:07:13.692243       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:07:13.692390       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:07:13.692426       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:07:13.692562       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:07:13.692611       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:07:13.692642       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:07:34.173891       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:07:34.174008       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:07:34.174032       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:07:34.174105       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:07:34.174126       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:07:34.174147       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:08:15.134590       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:15.134721       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:08:15.134826       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+E0122 09:08:15.134996       1 job_controller_actions.go:218] Failed to get queue from queueLister, error: queue.scheduling.volcano.sh "" not found
+I0122 09:08:15.135047       1 job_controller_actions.go:241] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:15.135082       1 job_controller.go:356] Failed to handle Job <default/gpu-vcjob1>: queue.scheduling.volcano.sh "" not found
+I0122 09:08:20.181134       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Job total 5 items received
+I0122 09:08:41.914635       1 cache.go:385] Try to delete Job <default/gpu-vcjob1>
+I0122 09:08:41.920209       1 cache.go:376] Job <default/gpu-vcjob1> was deleted.
+I0122 09:08:47.021455       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:47.021559       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <> by <*state.pendingState>.
+I0122 09:08:47.021581       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:47.021617       1 job_controller_actions.go:167] Starting to initiate Job <default/gpu-vcjob1>
+I0122 09:08:47.021471       1 garbagecollector.go:115] Adding job default/gpu-vcjob1
+I0122 09:08:47.033890       1 garbagecollector.go:124] Updating job default/gpu-vcjob1
+I0122 09:08:47.073842       1 queue_controller.go:246] Begin execute SyncQueue action for queue shared-workload, current status Open
+I0122 09:08:47.073888       1 queue_controller_action.go:35] Begin to sync queue shared-workload.
+I0122 09:08:47.073998       1 queue_controller_action.go:73] End sync queue shared-workload.
+I0122 09:08:47.074020       1 queue_controller.go:228] Finished syncing queue shared-workload (209.366µs).
+I0122 09:08:47.114559       1 queue_controller.go:246] Begin execute SyncQueue action for queue shared-workload, current status Open
+I0122 09:08:47.114603       1 queue_controller_action.go:35] Begin to sync queue shared-workload.
+I0122 09:08:47.124780       1 job_controller_actions.go:315] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:47.124844       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:47.125003       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Pending> by <*state.pendingState>.
+I0122 09:08:47.125029       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:47.125372       1 job_controller_actions.go:167] Starting to initiate Job <default/gpu-vcjob1>
+I0122 09:08:47.152320       1 queue_controller_action.go:83] End sync queue shared-workload.
+I0122 09:08:47.152364       1 queue_controller.go:228] Finished syncing queue shared-workload (37.819116ms).
+I0122 09:08:47.153932       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724367", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:08:47.259171       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:47.259258       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:47.259593       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Pending> by <*state.pendingState>.
+I0122 09:08:47.259628       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:47.259799       1 job_controller_actions.go:167] Starting to initiate Job <default/gpu-vcjob1>
+I0122 09:08:47.260451       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724374", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:08:47.261621       1 garbagecollector.go:124] Updating job default/gpu-vcjob1
+I0122 09:08:47.276552       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:47.276650       1 garbagecollector.go:124] Updating job default/gpu-vcjob1
+I0122 09:08:47.293144       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:cuda-task, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:47.293205       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Pending> by <*state.pendingState>.
+I0122 09:08:47.293224       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:47.293627       1 job_controller_actions.go:167] Starting to initiate Job <default/gpu-vcjob1>
+I0122 09:08:47.293953       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724377", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:08:47.311190       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:48.166756       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1beta1.Queue total 1 items received
+I0122 09:08:48.189550       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:cuda-task, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:48.189655       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Pending> by <*state.pendingState>.
+I0122 09:08:48.189680       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:48.189741       1 job_controller_actions.go:167] Starting to initiate Job <default/gpu-vcjob1>
+I0122 09:08:48.190451       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724377", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:08:48.200708       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:48.208449       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:cuda-task, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:48.208514       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Pending> by <*state.pendingState>.
+I0122 09:08:48.208535       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:48.208614       1 job_controller_actions.go:167] Starting to initiate Job <default/gpu-vcjob1>
+I0122 09:08:48.208953       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724377", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:08:48.211622       1 queue_controller.go:246] Begin execute SyncQueue action for queue shared-workload, current status Open
+I0122 09:08:48.211680       1 queue_controller_action.go:35] Begin to sync queue shared-workload.
+I0122 09:08:48.218865       1 queue_controller_action.go:83] End sync queue shared-workload.
+I0122 09:08:48.218907       1 queue_controller.go:228] Finished syncing queue shared-workload (7.304712ms).
+I0122 09:08:48.235459       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:48.235551       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:48.235614       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Pending> by <*state.pendingState>.
+I0122 09:08:48.235656       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:48.235733       1 job_controller_actions.go:167] Starting to initiate Job <default/gpu-vcjob1>
+I0122 09:08:48.241902       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724377", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:08:48.247344       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:48.251950       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:cuda-task, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:48.252012       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Pending> by <*state.pendingState>.
+I0122 09:08:48.252031       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:48.252065       1 job_controller_actions.go:167] Starting to initiate Job <default/gpu-vcjob1>
+I0122 09:08:48.252407       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724377", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:08:48.263433       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:48.573122       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:cuda-task, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:48.573211       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Pending> by <*state.pendingState>.
+I0122 09:08:48.573241       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:48.573301       1 job_controller_actions.go:167] Starting to initiate Job <default/gpu-vcjob1>
+I0122 09:08:48.573764       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724377", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:08:48.586382       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:48.598802       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:cuda-task, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:48.598897       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Pending> by <*state.pendingState>.
+I0122 09:08:48.598924       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:48.599010       1 job_controller_actions.go:167] Starting to initiate Job <default/gpu-vcjob1>
+I0122 09:08:48.599954       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724377", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:08:48.607445       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:48.689731       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:cuda-task, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:48.689798       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Pending> by <*state.pendingState>.
+I0122 09:08:48.689818       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:48.689915       1 job_controller_actions.go:167] Starting to initiate Job <default/gpu-vcjob1>
+I0122 09:08:48.690848       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724377", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:08:48.703146       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:51.178927       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Job total 11 items received
+I0122 09:08:52.446612       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:cuda-task, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:52.446690       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Pending> by <*state.pendingState>.
+I0122 09:08:52.446712       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:52.446838       1 job_controller_actions.go:167] Starting to initiate Job <default/gpu-vcjob1>
+I0122 09:08:52.447182       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724377", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:08:52.465926       1 garbagecollector.go:124] Updating job default/gpu-vcjob1
+I0122 09:08:52.467315       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:08:52.467405       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:08:52.467475       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Running> by <*state.runningState>.
+I0122 09:08:52.467505       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:08:52.467566       1 job_controller_actions.go:198] Starting to initiate Job <default/gpu-vcjob1> on update
+I0122 09:08:52.467964       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724438", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:08:52.479273       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:09:14.160750       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Command total 9 items received
+I0122 09:09:37.056476       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0122 09:09:37.056606       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Running> by <*state.runningState>.
+I0122 09:09:37.056652       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0122 09:09:37.056727       1 job_controller_actions.go:198] Starting to initiate Job <default/gpu-vcjob1> on update
+I0122 09:09:37.077014       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724438", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0122 09:09:37.089376       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0122 09:09:39.155036       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1alpha1.Command total 9 items received
+I0122 09:10:57.176724       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.PersistentVolumeClaim total 0 items received
+I0122 09:12:12.155168       1 reflector.go:788] pkg/mod/k8s.io/client-go@v0.27.2/tools/cache/reflector.go:231: Watch close - *v1.PriorityClass total 4 items received
+I0122 09:12:23.319970       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 09:12:23.320041       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 09:12:23.333866       1 queue_controller_action.go:83] End sync queue default.
+I0122 09:12:23.333950       1 queue_controller.go:228] Finished syncing queue default (14.012217ms).
+I0122 09:12:23.849751       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-a9889887-0656-48ce-8da3-696c581698e6, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 09:12:23.849838       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-a9889887-0656-48ce-8da3-696c581698e6, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-a9889887-0656-48ce-8da3-696c581698e6>
+I0122 09:12:23.849981       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 09:12:23.850042       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 09:12:23.871235       1 queue_controller_action.go:83] End sync queue default.
+I0122 09:12:23.871302       1 queue_controller.go:228] Finished syncing queue default (21.341028ms).
+I0122 09:12:23.875960       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-a9889887-0656-48ce-8da3-696c581698e6, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 09:12:23.876047       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-a9889887-0656-48ce-8da3-696c581698e6, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-a9889887-0656-48ce-8da3-696c581698e6>
+I0122 09:12:23.876832       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 09:12:23.876881       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 09:12:23.888564       1 queue_controller_action.go:83] End sync queue default.
+I0122 09:12:23.888608       1 queue_controller.go:228] Finished syncing queue default (11.817715ms).
+I0122 09:12:24.887829       1 queue_controller.go:246] Begin execute SyncQueue action for queue default, current status Open
+I0122 09:12:24.887895       1 queue_controller_action.go:35] Begin to sync queue default.
+I0122 09:12:24.888115       1 job_controller.go:329] Try to handle request <Queue: , Job: default/podgroup-a9889887-0656-48ce-8da3-696c581698e6, Task:, Event:, ExitCode:0, Action:, JobVersion: 0>
+E0122 09:12:24.888191       1 job_controller.go:334] Failed to get job by <Queue: , Job: default/podgroup-a9889887-0656-48ce-8da3-696c581698e6, Task:, Event:, ExitCode:0, Action:, JobVersion: 0> from cache: failed to find job <default/podgroup-a9889887-0656-48ce-8da3-696c581698e6>
+I0122 09:12:24.910383       1 queue_controller_action.go:83] End sync queue default.
+I0122 09:12:24.910431       1 queue_controller.go:228] Finished syncing queue default (22.630676ms).
+I0123 12:55:32.606849       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Running> by <*state.runningState>.
+I0123 12:55:32.606973       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0123 12:55:32.607328       1 job_controller_actions.go:198] Starting to initiate Job <default/gpu-vcjob1> on update
+I0123 12:55:32.608378       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724438", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0123 12:55:32.625393       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0123 12:55:34.785085       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:cuda-task, Event:TaskCompleted, ExitCode:0, Action:, JobVersion: 0>
+I0123 12:55:34.785176       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Running> by <*state.runningState>.
+I0123 12:55:34.785203       1 job_controller_actions.go:226] Starting to sync up Job <default/gpu-vcjob1>, current version 0
+I0123 12:55:34.785266       1 job_controller_actions.go:198] Starting to initiate Job <default/gpu-vcjob1> on update
+I0123 12:55:34.786350       1 event.go:298] Event(v1.ObjectReference{Kind:"Job", Namespace:"default", Name:"gpu-vcjob1", UID:"fba73db9-f4f4-4633-870d-23d40fb770c0", APIVersion:"batch.volcano.sh/v1alpha1", ResourceVersion:"61724438", FieldPath:""}): type: 'Warning' reason: 'PodGroupPending' PodGroup default:gpu-vcjob1 unschedule,reason: 1/0 tasks in gang unschedulable: pod group is not ready, 1 minAvailable
+I0123 12:55:34.802088       1 job_controller_actions.go:485] Finished Job <default/gpu-vcjob1> sync up, current version 0
+I0123 12:55:34.802936       1 garbagecollector.go:124] Updating job default/gpu-vcjob1
+I0123 12:55:34.803581       1 job_controller.go:329] Try to handle request <Queue: , Job: default/gpu-vcjob1, Task:, Event:OutOfSync, ExitCode:0, Action:, JobVersion: 0>
+I0123 12:55:34.803715       1 job_controller.go:346] Execute <SyncJob> on Job <default/gpu-vcjob1> in <Completed> by <*state.finishedState>.
+I0123 12:55:34.803759       1 job_controller_actions.go:48] Killing Job <default/gpu-vcjob1>, current version 0
+I0123 12:55:34.803871       1 job_controller_actions.go:122] Running duration is 27h46m48.803858034s
+I0123 12:55:34.815370       1 garbagecollector.go:124] Updating job default/gpu-vcjob1
+I0123 12:55:34.825336       1 job_controller_actions.go:163] Finished Job <default/gpu-vcjob1> killing, current version 0
+I0123 12:55:34.826314       1 queue_controller.go:246] Begin execute SyncQueue action for queue shared-workload, current status Open
+I0123 12:55:34.826522       1 queue_controller_action.go:35] Begin to sync queue shared-workload.
+I0123 12:55:34.841283       1 queue_controller_action.go:83] End sync queue shared-workload.
+I0123 12:55:34.841335       1 queue_controller.go:228] Finished syncing queue shared-workload (15.085814ms).
+
