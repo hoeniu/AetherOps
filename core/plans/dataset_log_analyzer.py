@@ -1,5 +1,11 @@
 import sys
 import os
+
+# 添加项目根目录到Python路径
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(os.path.dirname(current_dir))
+sys.path.append(project_root)
+
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -13,6 +19,12 @@ import time
 import concurrent.futures
 
 from core.base_processor import BaseProcessor
+
+class Document:
+    """简单的文档类，用于存储文本内容"""
+    def __init__(self, text: str):
+        self.text = text
+
 from core.prompts.log_analysis import (
     LOG_ANALYSIS_PROMPT,
     LOG_SUMMARY_PROMPT,
@@ -61,22 +73,29 @@ class AIModelLogAnalyzer(BaseProcessor):
         if not os.path.exists(log_file_path):
             raise FileNotFoundError(f"日志文件不存在：{log_file_path}")
             
-        # 解析和分割日志
-        docdata, self.all_chunks = self.parse_and_split(log_file_path, chunk_size)
-        if not self.all_chunks:
-            logger.warning("没有找到任何日志内容")
-            return {}
+        # 读取文本文件内容
+        try:
+            with open(log_file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+                
+            # 创建文档对象
+            doc = Document(text=content)
+            self.all_chunks = [doc]  # 将整个文件作为一个块处理
             
-        # 提取日志标签
-        log_tags = self._extract_log_tags(max_workers)
-        
-        # 生成分析报告
-        report = self._generate_analysis_report(log_tags)
-        
-        # 生成可视化图表
-        self._generate_visualizations(report)
-        
-        return report
+            # 提取日志标签
+            log_tags = self._extract_log_tags(max_workers)
+            
+            # 生成分析报告
+            report = self._generate_analysis_report(log_tags)
+            
+            # 生成可视化图表
+            self._generate_visualizations(report)
+            
+            return report
+            
+        except Exception as e:
+            logger.error(f"读取或处理日志文件时出错: {e}")
+            raise
         
     def _extract_log_tags(self, max_workers: int = None) -> List[Dict[str, Any]]:
         """从日志中提取标签"""
@@ -112,6 +131,20 @@ class AIModelLogAnalyzer(BaseProcessor):
         
         return unique_results
         
+    def _process_llm_response(self, response: Any) -> str:
+        """处理LLM响应，统一返回字符串格式"""
+        try:
+            if isinstance(response, str):
+                return response
+            elif hasattr(response, 'choices') and len(response.choices) > 0:
+                return response.choices[0].text
+            else:
+                logger.error(f"无法处理的LLM响应类型: {type(response)}")
+                return "{}"
+        except Exception as e:
+            logger.error(f"处理LLM响应时出错: {e}")
+            return "{}"
+
     def _process_log_chunk(self, chunk: Any) -> List[Dict[str, Any]]:
         """处理单个日志块"""
         try:
@@ -133,11 +166,14 @@ class AIModelLogAnalyzer(BaseProcessor):
                 user_input=user_input
             )
             
-            # 解析响应
-            cleaned_response = self._clean_json_string(response)
-            results = json.loads(cleaned_response)
-            
-            return results
+            # 处理响应
+            cleaned_response = self._clean_json_string(self._process_llm_response(response))
+            try:
+                results = json.loads(cleaned_response)
+                return results if isinstance(results, list) else []
+            except json.JSONDecodeError:
+                logger.error(f"无法解析LLM响应为JSON: {cleaned_response}")
+                return []
             
         except Exception as e:
             logger.error(f"处理日志块失败: {e}")
@@ -226,7 +262,12 @@ class AIModelLogAnalyzer(BaseProcessor):
             system_prompt=PERFORMANCE_ANALYSIS_PROMPT,
             user_input=perf_input
         )
-        return json.loads(response)
+        try:
+            cleaned_response = self._clean_json_string(self._process_llm_response(response))
+            return json.loads(cleaned_response)
+        except Exception as e:
+            logger.error(f"解析性能分析结果时出错: {e}")
+            return {}
         
     def _analyze_errors(self, error_tags: List[Dict[str, Any]]) -> Dict[str, Any]:
         """分析错误日志"""
@@ -235,7 +276,12 @@ class AIModelLogAnalyzer(BaseProcessor):
             system_prompt=ERROR_ANALYSIS_PROMPT,
             user_input=error_input
         )
-        return json.loads(response)
+        try:
+            cleaned_response = self._clean_json_string(self._process_llm_response(response))
+            return json.loads(cleaned_response)
+        except Exception as e:
+            logger.error(f"解析错误分析结果时出错: {e}")
+            return {}
         
     def _analyze_requests(self, request_tags: List[Dict[str, Any]]) -> Dict[str, Any]:
         """分析请求模式"""
@@ -244,7 +290,12 @@ class AIModelLogAnalyzer(BaseProcessor):
             system_prompt=BUSINESS_ANALYSIS_PROMPT,
             user_input=request_input
         )
-        return json.loads(response)
+        try:
+            cleaned_response = self._clean_json_string(self._process_llm_response(response))
+            return json.loads(cleaned_response)
+        except Exception as e:
+            logger.error(f"解析请求分析结果时出错: {e}")
+            return {}
         
     def _analyze_costs(self, cost_tags: List[Dict[str, Any]]) -> Dict[str, Any]:
         """分析成本"""
@@ -253,7 +304,12 @@ class AIModelLogAnalyzer(BaseProcessor):
             system_prompt=BUSINESS_ANALYSIS_PROMPT,
             user_input=cost_input
         )
-        return json.loads(response)
+        try:
+            cleaned_response = self._clean_json_string(self._process_llm_response(response))
+            return json.loads(cleaned_response)
+        except Exception as e:
+            logger.error(f"解析成本分析结果时出错: {e}")
+            return {}
         
     def _analyze_resources(self, resource_tags: List[Dict[str, Any]]) -> Dict[str, Any]:
         """分析资源使用"""
@@ -262,7 +318,12 @@ class AIModelLogAnalyzer(BaseProcessor):
             system_prompt=SYSTEM_STATUS_PROMPT,
             user_input=resource_input
         )
-        return json.loads(response)
+        try:
+            cleaned_response = self._clean_json_string(self._process_llm_response(response))
+            return json.loads(cleaned_response)
+        except Exception as e:
+            logger.error(f"解析资源分析结果时出错: {e}")
+            return {}
         
     def _clean_json_string(self, json_str: str) -> str:
         """清理JSON字符串"""
@@ -302,3 +363,60 @@ class AIModelLogAnalyzer(BaseProcessor):
                 unique_results.append(result)
                 
         return unique_results
+
+    def _generate_summary(self, grouped_tags: Dict[str, List[Dict[str, Any]]]) -> Dict[str, Any]:
+        """生成日志分析摘要"""
+        summary = {
+            'total_tags': sum(len(tags) for tags in grouped_tags.values()),
+            'tag_types': list(grouped_tags.keys()),
+            'tag_counts': {tag_type: len(tags) for tag_type, tags in grouped_tags.items()},
+            'timestamp': datetime.now(CHINA_TZ).strftime('%Y-%m-%d %H:%M:%S')
+        }
+        
+        # 添加关键指标
+        if '性能指标' in grouped_tags:
+            summary['performance_metrics'] = len(grouped_tags['性能指标'])
+        if '错误' in grouped_tags:
+            summary['error_count'] = len(grouped_tags['错误'])
+        if '请求' in grouped_tags:
+            summary['request_count'] = len(grouped_tags['请求'])
+        if '成本' in grouped_tags:
+            summary['cost_metrics'] = len(grouped_tags['成本'])
+        if '资源' in grouped_tags:
+            summary['resource_metrics'] = len(grouped_tags['资源'])
+            
+        return summary
+
+if __name__ == "__main__":
+    # 创建日志分析器实例
+    analyzer = AIModelLogAnalyzer()
+    
+    # 设置日志文件路径
+    log_file_path = os.path.join(os.path.dirname(current_dir), "data", "k8s-volcano-controller.log")
+    
+    try:
+        # 执行日志分析
+        print("开始分析日志文件...")
+        report = analyzer.analyze_logs(log_file_path)
+        
+        # 打印分析结果摘要
+        print("\n=== 日志分析报告摘要 ===")
+        if 'summary' in report:
+            print(json.dumps(report['summary'], ensure_ascii=False, indent=2))
+            
+        # 打印性能分析结果
+        if 'performance_analysis' in report:
+            print("\n=== 性能分析结果 ===")
+            print(json.dumps(report['performance_analysis'], ensure_ascii=False, indent=2))
+            
+        # 打印错误分析结果
+        if 'error_analysis' in report:
+            print("\n=== 错误分析结果 ===")
+            print(json.dumps(report['error_analysis'], ensure_ascii=False, indent=2))
+            
+        print("\n分析完成！可视化图表已保存。")
+        
+    except FileNotFoundError as e:
+        print(f"错误：{e}")
+    except Exception as e:
+        print(f"分析过程中发生错误：{e}")

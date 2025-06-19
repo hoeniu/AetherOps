@@ -4,6 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
 import random
+import json
 
 # 设置页面配置
 st.set_page_config(
@@ -513,96 +514,77 @@ elif page == "AI修复中心":
     st.title("AI修复中心")
 
     # 添加修复过程按钮
+    repair_url = "http://10.81.204.55:7777/chat/?scene=chat_agent&id=9b1c7f78-476c-11f0-94f9-2b96f16f267c"
+    st.markdown(f'<a href="{repair_url}" target="_blank" class="repair-process-btn">进入修复过程</a>', unsafe_allow_html=True)
+
+    # 添加日志分析部分
+    st.markdown('<div class="repair-section-title">日志分析</div>', unsafe_allow_html=True)
+    
+    # 日志文件选择
+    log_file = "core/data/k8s-volcano-controller.log"
+    
+    # 只保留日志预览和AI分析卡片，不再用两列布局
     st.markdown("""
     <style>
-    .repair-process-btn {
-        background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
-        color: white;
-        padding: 12px 24px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-block;
+    .log-preview {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        border: 1px solid #e0e7ef;
+        max-height: 400px;
+        overflow-y: auto;
         margin-bottom: 20px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(59,130,246,0.15);
     }
-    .repair-process-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(59,130,246,0.25);
+    .analysis-card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        border: 1px solid #e0e7ef;
     }
     </style>
     """, unsafe_allow_html=True)
 
-    # 添加修复过程按钮
-    repair_url = "http://10.81.204.55:7777/chat/?scene=chat_agent&id=9b1c7f78-476c-11f0-94f9-2b96f16f267c"
-    st.markdown(f'<a href="{repair_url}" target="_blank" class="repair-process-btn">进入修复过程</a>', unsafe_allow_html=True)
+    # 日志预览卡片
+    st.markdown('<div class="log-preview">', unsafe_allow_html=True)
+    st.subheader("日志预览")
+    try:
+        with open(log_file, 'r', encoding='utf-8') as f:
+            log_content = f.read()
+            last_lines = log_content.split('\n')[-100:]
+            st.text_area("日志内容", '\n'.join(last_lines), height=300)
+    except Exception as e:
+        st.error(f"无法读取日志文件: {str(e)}")
+    st.markdown('</div>', unsafe_allow_html=True)
 
-    # 自定义修复历史按钮样式
-    col1, col2 = st.columns([0.8, 2.2], gap="large")
-
-    # 左侧：修复历史
-    with col1:
-        st.markdown('<div class="repair-section-title">修复历史</div>', unsafe_allow_html=True)
-        
-        # 初始化选中状态
-        if 'selected_repair_idx' not in st.session_state:
-            st.session_state.selected_repair_idx = 0
-
-        # 创建修复历史按钮
-        for idx, h in enumerate(repair_history):
-            type_class = "repair-type-auto" if h["type"] == "自动修复" else "repair-type-manual"
-            is_selected = idx == st.session_state.selected_repair_idx
-            
-            # 使用按钮实现选择功能
-            if st.button(
-                f"{h['type']} | {h['desc']} | {h['time']}",
-                key=f"repair_btn_{idx}",
-                use_container_width=True,
-                help=f"点击查看{h['type']}详情"
-            ):
-                st.session_state.selected_repair_idx = idx
-                st.rerun()
-
-        selected_history = repair_history[st.session_state.selected_repair_idx]
-
-    # 右侧：修复过程详情
-    with col2:
-        st.markdown('<div class="repair-section-title">修复过程详情</div>', unsafe_allow_html=True)
-        # 使用卡片样式包装详情内容
-        st.markdown("""
-        <style>
-        .detail-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px solid #e0e7ef;
-        }
-        </style>
-        """, unsafe_allow_html=True)
-        
-        with st.container():
-            st.markdown('<div class="detail-card">', unsafe_allow_html=True)
-            st.markdown(f"**修复类型：** {selected_history['type']}")
-            st.markdown(f"**修复时间：** {selected_history['time']}")
-            st.markdown(f"**修复状态：** {selected_history['status']}")
-            st.markdown(f"**简要描述：** {selected_history['desc']}")
-            st.markdown("---")
-            st.markdown(f"**根因分析：** {selected_history['detail']['root_cause']}")
-            st.markdown("**修复步骤：**")
-            for i, step in enumerate(selected_history['detail']['steps'], 1):
-                st.markdown(f"{i}. {step}")
-            st.markdown("**修复链路：**")
-            st.graphviz_chart(f"""
-                digraph {{
-                    {' -> '.join(selected_history['detail']['chain'])}
-                }}
-            """)
-            st.markdown("**关键指标趋势：**")
-            trend = selected_history['detail']['trend']
-            st.line_chart(trend)
-            st.markdown('</div>', unsafe_allow_html=True)
+    # AI分析卡片
+    st.markdown('<div class="analysis-card">', unsafe_allow_html=True)
+    st.subheader("AI分析")
+    api_key = st.text_input("DashScope API Key", type="password")
+    if st.button("开始分析", use_container_width=True):
+        if not api_key:
+            st.error("请输入DashScope API Key")
+        else:
+            progress_placeholder = st.empty()
+            markdown_placeholder = st.empty()
+            markdown_blocks = []
+            with st.spinner("正在分析日志..."):
+                try:
+                    from core.plans.qwen_log_analyzer import analyze_logs_stream
+                    for step_result in analyze_logs_stream(log_file, api_key):
+                        step = step_result.get('step')
+                        data = step_result.get('data')
+                        # 直接渲染AI真实分析内容
+                        if step in ['markdown', 'llm_output']:
+                            markdown_blocks.append(data)
+                            markdown_placeholder.markdown("\n\n".join(markdown_blocks), unsafe_allow_html=True)
+                        elif step == 'error':
+                            progress_placeholder.error(f"分析过程中发生错误: {data}")
+                except Exception as e:
+                    if "WebSocketClosedError" not in str(e):
+                        progress_placeholder.error(f"分析过程中发生错误: {str(e)}")
+    st.markdown('</div>', unsafe_allow_html=True)
 
 # 环境管理页面
 elif page == "环境管理":
